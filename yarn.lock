@@ -1837,6 +1837,16 @@ normalize-path@^2.1.1:
   dependencies:
     remove-trailing-separator "^1.0.1"
 
+now-env@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/now-env/-/now-env-3.1.0.tgz#e0198b67279d387229cfd4b25de4c2fc7156943f"
+  integrity sha512-f+jXC+UkoxD/g9Nlig99Bxswoh7UUuQxw0EsPfuueHnVpVE0LfgQ4el5dxY4TSXwrL9mEF9GGm0gb7r3K8r/ug==
+
+now@^13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/now/-/now-13.0.2.tgz#479fb6cb8bf4ad7a994df2f93f7fb5db939fb340"
+  integrity sha512-icuaRyuApd1IqpFfhAoJfG30adOolz333MlSzDlLD35k/HdasDRXbVQQPxilOBxhiBCdgsdDN3p5R+/0pL1A0Q==
+
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"

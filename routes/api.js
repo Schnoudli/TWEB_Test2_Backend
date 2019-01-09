@@ -12,14 +12,14 @@ const router = express.Router();
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Enable CORS for the client app
+app.use(cors());
+
 // Créer un objet pour communiquer avec l'API Github
 const client = new Github({token: process.env.OAUTH_TOKEN});
 
 // Créer un objet pour communiquer avec la DB
 const db = new DBAccess();
-
-// Enable CORS for the client app
-app.use(cors());
 
 /**
  * authenticationRequired is a middleware that use the jwt strategy to authenticate
