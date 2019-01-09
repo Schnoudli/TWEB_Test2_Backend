@@ -10,7 +10,7 @@ class ResponseError extends Error {
 }
 
 class Github {
-  constructor({token, baseUrl = 'https://api.github.com'} = {}) {
+  constructor({ token, baseUrl = 'https://api.github.com' } = {}) {
     this.token = token;
     this.baseUrl = baseUrl;
   }
@@ -23,7 +23,7 @@ class Github {
     const url = `${this.baseUrl}${path}`;
     const options = {
       ...opts,
-      headers:{
+      headers: {
         Accept: 'application/vnd.github.v3+json',
         Authorization: `token ${this.token}`,
       },
@@ -31,8 +31,7 @@ class Github {
 
     return fetch(url, options)
       .then(res => res.json()
-        .then(data => {
-
+        .then((data) => {
           if (!res.ok) {
             throw new ResponseError(res, data);
           }
@@ -58,7 +57,7 @@ class Github {
       .then((repos) => {
         const getLanguages = repo => this.reposLanguages(repo.full_name);
         return Promise.all(repos.map(getLanguages));
-      })
+      });
   }
 }
 

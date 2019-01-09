@@ -10,7 +10,7 @@ const USER = {
   email: 'admin@example.com',
   username: 'admin',
   password: 'admin',
-}
+};
 
 // Import des stratégies locales, JWT et comment extraire le JWT de la requête
 const router = express.Router();
@@ -51,7 +51,7 @@ passport.use(new JWTStrategy(
 ));
 
 // On utilise pas de session (stateless)
-// Renvoit l'utilisateur ainsi que le token 
+// Renvoit l'utilisateur ainsi que le token
 // Pour tester : curl -X POST -H "Content-type: application/json" -d '{"username": "admin", "password": "admin"}' http://localhost:4000/auth/login
 router.post('/login', passport.authenticate('local', { session: false }), (req, res) => {
   const { password, ...user } = req.user;
