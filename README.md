@@ -15,3 +15,5 @@ To register : ``curl -X POST -H "Content-type: application/json" -d '{"username"
 To login : ``curl -X POST -H "Content-type: application/json" -d '{"username": "admin", "password": "admin"}' http://localhost:4000/auth/login``
 
 Check the Google Form for more details about the implementation and the problems encountered.
+
+To test : ``npm test``
