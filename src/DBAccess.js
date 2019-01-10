@@ -67,6 +67,14 @@ class DBAccess {
   getUser(username, password) {
     return this.User.find({ username, password });
   }
+
+  addToWatchList(user, movie){
+    // TODO
+  }
+
+  getWatchList(user){
+    // TODO 
+  }
 }
 
 module.exports = DBAccess;
