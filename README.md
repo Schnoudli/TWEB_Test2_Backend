@@ -16,4 +16,4 @@ To login : ``curl -X POST -H "Content-type: application/json" -d '{"username": "
 
 Check the Google Form for more details about the implementation and the problems encountered.
 
-To test : ``npm test``
+To run tests : ``npm test``
