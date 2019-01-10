@@ -3,7 +3,11 @@ const passport = require('passport');
 const passportLocal = require('passport-local');
 const passportJWT = require('passport-jwt');
 const jwt = require('jsonwebtoken');
+const DBAccess = require('../src/DBAccess');
 const { jwtOptions } = require('../config');
+
+// Créer un objet pour communiquer avec la DB
+const db = new DBAccess();
 
 const USER = {
   id: '123456789',
@@ -25,7 +29,7 @@ passport.use(new LocalStrategy(
     passwordField: 'password',
   },
   (username, password, done) => {
-    // here you should make a database call
+    // Faire l'accès en DB ICI ! Comme ça a merdé avec les Movies, je laisse ça 
     if (username === USER.username && password === USER.password) {
       // Null = pas d'erreur
       return done(null, USER);
@@ -57,6 +61,17 @@ router.post('/login', passport.authenticate('local', { session: false }), (req, 
   const { password, ...user } = req.user;
   const token = jwt.sign({ userId: user.id }, jwtOptions.secret);
   res.send({ user, token });
+});
+
+// Récupère les paramètres envoyés pour s'enregistrer et les insère en DB
+router.post('/register', (req, res) => {
+  const { username, password } = req.body;
+
+  db.insertUser(username, password);
+
+  // TODO : Check if no error
+  res.send('Registered');
+  res.status('201');
 });
 
 module.exports = router;
