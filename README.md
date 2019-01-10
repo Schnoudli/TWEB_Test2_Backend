@@ -5,7 +5,7 @@
 
 And everything should be fine
 
-You can acces endpoints : 
+You can access these endpoints : 
 - URL/api/movies
 - URL/api/movies/<pageNumber>
 - URL/auth/register
@@ -13,3 +13,5 @@ You can acces endpoints :
 
 To register : ``curl -X POST -H "Content-type: application/json" -d '{"username": "test", "password": "test"}' http://localhost:4000/auth/register``
 To login : ``curl -X POST -H "Content-type: application/json" -d '{"username": "admin", "password": "admin"}' http://localhost:4000/auth/login``
+
+Check the Google Form for more details about the implementation.
